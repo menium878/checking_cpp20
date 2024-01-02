@@ -1,3 +1,0 @@
-C:/Users/Menium/CLionProjects/checking_cpp20/cmake-build-debug/CMakeFiles/checking_cpp20.dir
-C:/Users/Menium/CLionProjects/checking_cpp20/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Menium/CLionProjects/checking_cpp20/cmake-build-debug/CMakeFiles/rebuild_cache.dir
