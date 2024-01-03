@@ -23,7 +23,11 @@ int main() {
 
     auto members = values
             | std::views::filter(flagged)
-            | std::views::transform([](PossibleValue pv){return pv.value;});
+            | std::views::transform([](PossibleValue pv){return pv.value;})
+            | std::views::reverse
+            |std::views::drop(2) // drops first 2
+            ;
+    // it still hold all just applies when needed so in this example members still is 5 elements but when used only the once in criteria will be used
     for ( auto i:members){
         std::cout<<i<<"\n";
     }
