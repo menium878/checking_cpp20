@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <ranges>
+#include <thread>
 
 struct PossibleValue {bool flag; int value;};
 
@@ -31,5 +32,20 @@ int main() {
     for ( auto i:members){
         std::cout<<i<<"\n";
     }
+
+    //parallelism many things at the same time 8 people run at once
+    // concurrecy turn-taking
+    std::thread otherThread([](){std::cout<<"this is in other thread \n";}); // constructing thread
+    otherThread.join();  // ending thread
+
+    int number = 0;
+    std::thread secoundThread([&number](){number=10;});
+    secoundThread.join(); // need to join
+    number = 0;
+    if(number==0){
+        std::jthread secThread([&number](){number=10;}); // will destruct when its safe to acces the number
+    }
+
+
     return 0;
 }
