@@ -17,7 +17,7 @@ int main() {
     std::vector <int> rEvens;
     std::copy_if(numbers.begin(), numbers.end(),std::back_inserter(rEvens),[](int n) { return n %2 ==0;});
 
-    auto vEvens = numbers | std::views::filter([](int n){return n%2==0;}); //  | <- nałożenie widoku
+    auto vEvens = numbers | std::views::filter([](int n){return n%2==0;}); //!  | <- nałożenie widoku, nie tworzy kopi !!!
     std::vector<PossibleValue> values = {{true,1},{true,2},{false,3},{true,4},{false,5}};
     auto flagged = [](PossibleValue pv){return pv.flag;};
 
