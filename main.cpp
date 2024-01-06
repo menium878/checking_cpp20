@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <ranges>
 #include <thread>
+#include <execution>
 
 struct PossibleValue {bool flag; int value;};
 
@@ -45,7 +46,7 @@ int main() {
     if(number==0){
         std::jthread secThread([&number](){number=10;}); // will destruct when its safe to acces the number
     }
-
+    std::sort(std::execution::par,numbers.begin(), numbers.end()); // it tells to do it parallel compilator will take it and do it by themselves
 
     return 0;
 }
